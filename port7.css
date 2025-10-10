@@ -1,0 +1,747 @@
+/*==================== BASE STYLES & RESET ====================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Inter', sans-serif;
+    color: white;
+    background-color: black;
+    scroll-behavior: smooth;
+}
+
+/*==================== HERO SECTION WITH VIDEO (Fully Centered) ====================*/
+
+.hero-block {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*==================== HEADER ====================*/
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active-link {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.scroll-header {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+/*==================== HERO TEXT (Centered) ====================*/
+
+.hero {
+    text-align: center;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+
+/*==================== SCROLL DOWN BUTTON ====================*/
+
+.scroll-down-button {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+    z-index: 2;
+}
+
+.scroll-down-button:hover {
+    opacity: 1;
+}
+
+.mouse-shape {
+    width: 30px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 25px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background-color: white;
+    border-radius: 2px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 1.2s infinite ease-in-out;
+}
+
+@keyframes scrollWheel {
+    0%, 100% { top: 10px; opacity: 1; }
+    50% { top: 25px; opacity: 0; }
+}
+
+
+/*==================== ABOUT ME SECTION 1 (Reversed Layout) ====================*/
+/* Fluid Horizontal Layout using VW units for proportional scaling */
+#about-me-section-1 {
+    padding: 5vw 5%; 
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+#about-me-section-1 .about-container {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap; 
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6vw; 
+    max-width: 1200px;
+    width: 100%;
+    min-height: 400px;
+}
+
+#about-me-section-1 .home__img {
+    flex-shrink: 0;
+    width: 30vw; 
+    max-width: 350px; 
+    height: auto;
+    aspect-ratio: 1 / 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-me-section-1 .home__blob-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#about-me-section-1 .about-text {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 40%;
+    max-width: 500px;
+    text-align: left;
+}
+
+#about-me-section-1 .about-text p {
+    white-space: normal; 
+}
+
+/* VW FONT SCALING for Section 1 */
+#about-me-section-1 .about-text h1 {
+    font-size: 2.5vw; 
+    font-weight: bold;
+    margin-bottom: 0.5vw;
+}
+
+#about-me-section-1 .about-text h3 {
+    font-size: 1.25vw;
+    color: #ccc;
+    margin-bottom: 1vw;
+}
+
+#about-me-section-1 .about-text p {
+    font-size: 1vw; 
+    line-height: 1.6;
+    margin-bottom: 1.5vw;
+}
+
+/* Contact Me Button (Fluid size) */
+.btn-resume {
+    display: inline-block;
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+    padding: 0.8vw 1.5vw;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid white;
+    transition: 0.3s;
+    white-space: nowrap;
+    font-size: 1vw; 
+}
+
+.btn-resume:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+    color: white;
+}
+
+.social-icons-vertical {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3vw; 
+    flex-wrap: nowrap;
+}
+
+.social-icons-vertical a {
+    color: rgb(245, 246, 247);
+    font-size: 2.5vw; /* Fluid icon size */
+    transition: 0.3s;
+    flex-shrink: 0;
+}
+
+.social-icons-vertical a:hover {
+    color: #7289da;
+}
+
+/*==================== ABOUT ME SECTION 2 (Game & Level Designer) ====================*/
+/* Fluid Horizontal Layout using VW units for proportional scaling */
+.about {
+    padding: 5vw 5%;
+    background-color: #000000;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.about .about-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    align-items: center;
+    justify-content: center;
+    gap: 6vw; 
+    min-height: 400px;
+}
+
+.about .about-text {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 40%;
+    max-width: 500px;
+    text-align: left;
+}
+
+.about .about-text p {
+    white-space: normal; 
+}
+
+.about .about-img {
+    flex-shrink: 0;
+    width: 25vw; 
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 300 / 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.about .about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* VW FONT SCALING for Section 2 */
+.about .title {
+    font-size: 3vw; 
+    font-weight: bold;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.about .title span {
+    font-size: 3.25vw;
+    display: inline-block;
+}
+
+.about .subtitle {
+    font-size: 1vw;
+    font-style: italic;
+    margin: 10px 0 30px;
+    color: #bbb;
+}
+
+.about .description {
+    font-size: 1.125vw; 
+    line-height: 1.6;
+}
+
+.about .tag1, .tag2, .tag3, .tag4 {
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    margin: 0 0.3vw 1vw 0;
+    font-weight: 500;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 0.9vw; 
+}
+
+.res-button {
+    display: inline-block;
+    margin-top: 1.25vw;
+    padding: 0.75vw 1.5vw; 
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    white-space: nowrap;
+    font-size: 1vw; 
+}
+
+.res-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+    color: white;
+}
+
+
+/*==================== SCROLL UP ====================*/
+
+.scrollup {
+  position: fixed;
+  right: 1.5rem;
+  bottom: -20%;
+  background-color: white;
+  opacity: 0.9;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.3rem;
+  z-index: 10;
+  transition: all 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.scrollup:hover {
+  background-color: #f0f0f0;
+  opacity: 1;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.scrollup__icon {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.show-scroll {
+  bottom: 1.5rem;
+}
+
+
+/*==================== FOOTER ====================*/
+
+.main-portfolio-footer {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 50px;
+}
+
+.main-portfolio-footer .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+.main-portfolio-footer .footer-column {
+    width: 25%;
+    min-width: 200px;
+    padding: 20px;
+}
+
+.main-portfolio-footer h4 {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.main-portfolio-footer p, .main-portfolio-footer li {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.main-portfolio-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-portfolio-footer ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.main-portfolio-footer ul li a:hover {
+    color: #007bff;
+}
+
+.main-portfolio-footer .footer-bottom-nav,
+.main-portfolio-footer .footer-bottom-social {
+    display: flex;
+    justify-content: center;
+    padding: 15px 20px;
+    gap: 30px;
+    border-top: 1px solid #eee;
+}
+
+.main-portfolio-footer .footer-bottom-nav a {
+    color: #666;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.main-portfolio-footer .footer-bottom-nav a:hover {
+    color: #007bff;
+}
+
+.main-portfolio-footer .footer-bottom-social {
+    border-top: none;
+    padding-bottom: 15px;
+}
+
+.main-portfolio-footer .footer-bottom-social a {
+    color: #333;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.main-portfolio-footer .footer-bottom-social a:hover {
+    color: #007bff;
+}
+
+.main-portfolio-footer .footer-copyright-bottom {
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 12px;
+    color: #999;
+    background-color: #e0e0e0;
+}
+
+
+/*==================== RESPONSIVE STYLES (Mobile Overrides) ====================*/
+
+@media (max-width: 768px) {
+    /* --- Base Overrides --- */
+    .logo {
+        font-size: 18px; 
+    }
+    .header {
+        padding: 15px 20px;
+    }
+    .nav a {
+        margin-left: 15px;
+        font-size: 14px;
+    }
+    
+    /* Mouse/Wheel Sizing (Fixed size from screenshot) */
+    .mouse-shape {
+        width: 15px; 
+        height: 25px; 
+        border-radius: 12.5px;
+        margin-bottom: 5px; 
+    }
+    .wheel {
+        width: 3px; 
+        height: 8px; 
+    }
+    
+    /* Hello I'm Bisal Section Font Size Scaling */
+    .hero h1 {
+        font-size: 8vw; /* Bigger heading on mobile */
+        margin-bottom: 5px;
+    }
+    .hero p {
+        font-size: 3vw; 
+        margin-bottom: 20px;
+    }
+    
+    /* Video Aspect Ratio Fix for Mobile */
+    .hero-block {
+        height: 100vh; 
+        aspect-ratio: auto; 
+    }
+
+    @media (orientation: landscape) and (max-height: 768px) {
+        .hero-block {
+            /* Force 16:9 ratio in landscape */
+            height: 100vh;
+            width: auto;
+            aspect-ratio: 16 / 9; 
+            max-width: 100vw;
+            min-height: unset;
+            
+            /* Center the 16:9 box vertically and horizontally */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+
+    /* Reduce Black Space (Vertical Padding/Min-Height) */
+    #about-me-section-1, .about {
+        padding: 40px 5%; /* Increased vertical padding for breathing room */
+        min-height: auto; 
+    }
+
+
+    /* ---------------------------------------------------- */
+    /* --- SECTION 1: ABOUT ME (Horizontal Layout) --- */
+    /* ---------------------------------------------------- */
+    #about-me-section-1 .about-container {
+        /* USE HORIZONTAL LAYOUT (row-reverse) to put image on right */
+        flex-direction: row-reverse; 
+        align-items: flex-start; 
+        gap: 30px; 
+    }
+
+    #about-me-section-1 .home__img {
+        /* Fixed size for the image/blob on mobile, slightly smaller to fit horizontal layout */
+        width: 120px; 
+        max-width: 120px; 
+        height: 120px; 
+        
+        /* Remove stacking specific rules */
+        order: unset; 
+        margin: 0; 
+    }
+    
+    /* Crucial: Hide the SVG blob path and make the image circular directly */
+    #about-me-section-1 .home__blob {
+        width: 100%;
+        height: 100%;
+    }
+    #about-me-section-1 .home__blob-img {
+        /* OVERRIDE the SVG mask effect for a simple circular image */
+        border-radius: 50%; 
+        object-fit: cover;
+        position: relative; 
+        left: 0;
+        top: 0;
+        transform: none;
+    }
+    
+    /* Adjusted text block sizing to work with horizontal image */
+    #about-me-section-1 .about-text {
+        flex-grow: 1;
+        flex-shrink: 1;
+        min-width: 55%; 
+        max-width: 70%;
+        text-align: left;
+    }
+    
+    /* Font size scaling for Section 1 (Adjusted for horizontal space) */
+    #about-me-section-1 .about-text h1 {
+        font-size: 5vw; 
+        margin-bottom: 5px;
+    }
+    #about-me-section-1 .about-text h3 {
+        font-size: 3vw;
+        margin-bottom: 15px;
+    }
+    #about-me-section-1 .about-text p {
+        font-size: 2.8vw; 
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+    
+    /* Contact Button and Logos scaling */
+    .btn-resume {
+        padding: 12px 20px; 
+        font-size: 3.5vw;
+        margin-bottom: 15px;
+    }
+    .social-icons-vertical {
+        gap: 15px; /* Reduced gap */
+    }
+    .social-icons-vertical a {
+        font-size: 5vw; 
+    }
+
+
+    /* ---------------------------------------------------- */
+    /* --- SECTION 2: GAME & LEVEL DESIGNER (Horizontal Layout) --- */
+    /* ---------------------------------------------------- */
+    .about .about-container {
+        /* *** CRITICAL CHANGE: USE HORIZONTAL LAYOUT (row) to put image on left/right *** */
+        flex-direction: row; /* Keep the image on the left, text on the right */
+        align-items: center; 
+        gap: 30px; /* Reduced gap for mobile horizontal space */
+    }
+    
+    .about .about-img {
+        /* Fixed size for the image on mobile */
+        width: 150px; 
+        max-width: 150px;
+        height: 200px; /* Adjusted height for the vertical image aspect */
+        
+        /* Remove stacking specific rules */
+        order: unset; 
+        margin: 0; 
+    }
+
+    .about .about-text {
+        /* Adjusted text block sizing to work with horizontal image */
+        flex-grow: 1;
+        flex-shrink: 1;
+        min-width: 55%; 
+        max-width: 70%;
+        text-align: left;
+        order: unset; 
+    }
+
+    /* Font size scaling for Section 2 (Adjusted for horizontal space) */
+    .about .title {
+        font-size: 5vw;
+        line-height: 1.1;
+    }
+    .about .title span {
+        font-size: 5.5vw;
+    }
+    .about .subtitle {
+        font-size: 3vw;
+        margin: 5px 0 10px;
+    }
+    .about .description {
+        font-size: 2.8vw;
+    }
+    .about .tag1, .tag2, .tag3, .tag4 {
+        font-size: 2.5vw;
+        margin: 0 1vw 1vw 0;
+    }
+    .res-button {
+        padding: 10px 18px;
+        font-size: 3vw; 
+    }
+    
+    /* Footer Fixes (Unchanged) */
+    .main-portfolio-footer .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 15px 20px;
+    }
+    .main-portfolio-footer .footer-column {
+        width: 100%;
+        min-width: unset;
+        padding: 10px 0;
+    }
+    .main-portfolio-footer .footer-bottom-nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 10px;
+    }
+    .main-portfolio-footer .footer-bottom-social {
+        flex-direction: row; 
+        flex-wrap: wrap;
+        gap: 15px; 
+        padding: 15px 10px;
+    }
+}
