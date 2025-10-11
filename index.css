@@ -159,7 +159,6 @@ body {
 
 
 /*==================== ABOUT ME SECTION 1 (Reversed Layout) ====================*/
-/* Fluid Horizontal Layout using VW units for proportional scaling */
 #about-me-section-1 {
     padding: 5vw 5%; 
     background-color: #000000;
@@ -177,8 +176,8 @@ body {
     align-items: flex-start;
     gap: 6vw; 
     max-width: 1200px;
+    /* min-height: 400px;------------------------------------------------------------------------------------ */
     width: 100%;
-    min-height: 400px;
 }
 
 #about-me-section-1 .home__img {
@@ -211,39 +210,39 @@ body {
     white-space: normal; 
 }
 
-/* VW FONT SCALING for Section 1 */
+/* DESKTOP FONT FIX: Fixed REM values for consistency */
 #about-me-section-1 .about-text h1 {
-    font-size: 2.5vw; 
+    font-size: 2.2rem;
     font-weight: bold;
-    margin-bottom: 0.5vw;
+    margin-bottom: 0.8rem;
 }
 
 #about-me-section-1 .about-text h3 {
-    font-size: 1.25vw;
+    font-size: 1.2rem;
     color: #ccc;
-    margin-bottom: 1vw;
+    margin-bottom: 1.2rem;
 }
 
 #about-me-section-1 .about-text p {
-    font-size: 1vw; 
+    font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1.5vw;
+    margin-bottom: 1.5rem;
 }
 
-/* Contact Me Button (Fluid size) */
+/* Contact Me Button (Fixed size on desktop) */
 .btn-resume {
     display: inline-block;
     margin-bottom: 20px;
     background-color: white;
     color: black;
-    padding: 0.8vw 1.5vw;
+    padding: 0.8rem 1.5rem;
     border-radius: 8px;
     font-weight: bold;
     text-decoration: none;
     border: 2px solid white;
     transition: 0.3s;
     white-space: nowrap;
-    font-size: 1vw; 
+    font-size: 1rem; 
 }
 
 .btn-resume:hover {
@@ -257,14 +256,14 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 3vw; 
+    gap: 2rem; 
     flex-wrap: nowrap;
 }
 
 .social-icons-vertical a {
     color: rgb(245, 246, 247);
-    font-size: 2.5vw; /* Fluid icon size */
-    transition: 0.3s;
+    font-size: 2rem; 
+    transition: color 0.3s;
     flex-shrink: 0;
 }
 
@@ -273,7 +272,6 @@ body {
 }
 
 /*==================== ABOUT ME SECTION 2 (Game & Level Designer) ====================*/
-/* Fluid Horizontal Layout using VW units for proportional scaling */
 .about {
     padding: 5vw 5%;
     background-color: #000000;
@@ -329,9 +327,9 @@ body {
     border-radius: 0;
 }
 
-/* VW FONT SCALING for Section 2 */
+/* DESKTOP FONT FIX: Fixed REM values for consistency */
 .about .title {
-    font-size: 3vw; 
+    font-size: 2.5rem; 
     font-weight: bold;
     line-height: 1.2;
     color: #fff;
@@ -339,19 +337,19 @@ body {
 }
 
 .about .title span {
-    font-size: 3.25vw;
+    font-size: 2.75rem;
     display: inline-block;
 }
 
 .about .subtitle {
-    font-size: 1vw;
+    font-size: 1rem;
     font-style: italic;
-    margin: 10px 0 30px;
+    margin: 10px 0 20px;
     color: #bbb;
 }
 
 .about .description {
-    font-size: 1.125vw; 
+    font-size: 1.1rem; 
     line-height: 1.6;
 }
 
@@ -359,17 +357,31 @@ body {
     color: white;
     padding: 0.2rem 0.5rem;
     border-radius: 6px;
-    margin: 0 0.3vw 1vw 0;
+    margin: 0 0.5rem 1rem 0; 
     font-weight: 500;
     display: inline-block;
     white-space: nowrap;
-    font-size: 0.9vw; 
+    font-size: 0.9rem; 
 }
+
+.about .tag1{
+    background-color: rgb(91, 37, 6);
+}
+.about .tag2{
+    background-color: rgb(90, 23, 23);
+}
+.about .tag3{
+    background-color: rgb(18, 102, 151);
+}
+.about .tag4{
+    background-color: rgb(198, 132, 32);
+}
+
 
 .res-button {
     display: inline-block;
-    margin-top: 1.25vw;
-    padding: 0.75vw 1.5vw; 
+    margin-top: 1.25rem;
+    padding: 0.75rem 1.5rem; 
     background-color: white;
     color: black;
     border: 2px solid white;
@@ -379,7 +391,7 @@ body {
     transition: all 0.3s ease;
     align-self: flex-start;
     white-space: nowrap;
-    font-size: 1vw; 
+    font-size: 1rem; 
 }
 
 .res-button:hover {
@@ -387,6 +399,304 @@ body {
     box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
     background-color: transparent;
     color: white;
+}
+
+
+/*==================== SKILLS SECTION STYLES ====================*/
+
+#skills {
+
+    /* Background is Black */
+    background-color: black; 
+    color: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* ADDED: Skills Section Heading Style */
+.skills-main-title {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    max-width: 1200px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.skills-main-title span {
+    font-size: 2.75rem;
+    display: inline-block;
+}
+
+.skills-card-container {
+    max-width: 1200px;
+    width: 100%;
+    /* DESKTOP: Side-by-side layout */
+    display: flex;
+    flex-direction: row; 
+    gap: 3rem;
+}
+
+.skills-card {
+    flex: 1;
+    min-width: 0;
+    
+    /* DARK CARD STYLING */
+    background-color: #1a1a1a; 
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    color: white;
+    
+    /* ADDED: Smooth transition for hover effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* ADDED: Hover effect for the skill cards */
+.skills-card:hover {
+    /* Lift up the card */
+    transform: translateY(-8px); 
+    /* Create a stronger, blue-tinted shadow effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 123, 255, 0.2);
+    /* Slightly lighten the background color */
+    background-color: #252525; 
+}
+
+.skills-card h2 {
+    font-weight: 800;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    color: white; 
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #444; 
+    padding-bottom: 0.75rem;
+}
+
+.skills-card p.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    color: #bbb; 
+    margin-bottom: 1rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem; 
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0.375rem;
+    transition: all 0.2s ease-in-out, transform 0.2s ease; /* Updated transition */
+    cursor: default;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.05); 
+    line-height: 1;
+}
+
+/* ADJUSTED: Skill tag hover effect for a slight scale */
+.skill-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.tag-monochrome {
+    background-color: #333; 
+    color: #fff; 
+    border: 1px solid #555; 
+}
+
+/* ------------------------------------------- */
+/* --- ADDED: SCROLL ANIMATION CSS (Initial state) --- */
+/* ------------------------------------------- */
+.animate-card-init {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Animation delay for the second card */
+.skills-card:nth-child(2).animate-card-init {
+    transition-delay: 0.2s;
+}
+
+/* Final state applied by JavaScript on scroll */
+.show-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/*==================== PROJECTS SECTION HEADER STYLES ====================*/
+
+.projects-title-section {
+    background-color: black;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.projects-main-title {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    max-width: 1200px;
+}
+
+.projects-main-title span {
+    font-size: 2.75rem;
+    display: inline-block;
+}
+
+
+/*==================== PROJECTS SECTION STYLES (UPDATED FOR CARD LOOK) ====================*/
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* Ensure the background of the main section is black */
+    background-color: black; 
+    padding: 40px 0; /* Add overall vertical padding */
+}
+
+.project-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0; /* Vertical spacing between cards */
+    min-height: auto;
+    width: 100%; 
+}
+
+/* Common container style to achieve the card shape and wide look */
+.project-right-media, .project-left-media {
+    max-width: 1100px; /* Adjust maximum width for a wider look */
+    width: 90%; /* Use a percentage for responsiveness */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px; /* Inner padding for content ----------------------------------------------------*/
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Project 1: White Card with Black Border */
+.project-block:nth-child(1) .project-right-media {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+/* Project 2: Black Card with Subtle White Border */
+.project-block:nth-child(2) .project-left-media {
+    background-color: black;
+    color: white;
+
+}
+
+/* Project Layout Structure */
+.project-right-media {
+    flex-direction: row;
+}
+
+.project-left-media {
+    flex-direction: row-reverse;
+}
+
+.project-media, .project-content {
+    flex: 1;
+    max-width: 50%;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.project-media img, .project-media iframe {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 350px;
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Adjust media border for the black card to match the card color */
+.project-block:nth-child(2) .project-media img, 
+.project-block:nth-child(2) .project-media iframe {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.project-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Button Styles - General */
+.project-right-media .btn-more-info, .project-right-media .btn-steam,
+.project-left-media .btn-more-info, .project-left-media .btn-steam {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 250px; 
+    max-width: 100%;
+    font-size: 1rem;
+}
+
+/* Buttons inside the WHITE card (Project 1) */
+.project-block:nth-child(1) .btn-more-info, 
+.project-block:nth-child(1) .btn-steam {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+}
+.project-block:nth-child(1) .btn-steam:hover {
+    background-color: #333;
+}
+
+
+/* Buttons inside the BLACK card (Project 2) */
+.project-block:nth-child(2) .btn-more-info, 
+.project-block:nth-child(2) .btn-steam {
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+}
+.project-block:nth-child(2) .btn-steam:hover {
+    background-color: #ccc;
+}
+
+
+.project-right-media .btn-more-info:hover, .project-right-media .btn-steam:hover,
+.project-left-media .btn-more-info:hover, .project-left-media .btn-steam:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -437,7 +747,7 @@ body {
 .main-portfolio-footer .footer-top {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; 
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px 40px;
@@ -445,7 +755,8 @@ body {
 }
 
 .main-portfolio-footer .footer-column {
-    width: 25%;
+    width: 100%; 
+    max-width: 600px; 
     min-width: 200px;
     padding: 20px;
 }
@@ -455,28 +766,6 @@ body {
     color: #000;
     margin-bottom: 15px;
     font-weight: 600;
-}
-
-.main-portfolio-footer p, .main-portfolio-footer li {
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.main-portfolio-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-.main-portfolio-footer ul li a {
-    color: #666;
-    text-decoration: none;
-    transition: color 0.3s;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.main-portfolio-footer ul li a:hover {
-    color: #007bff;
 }
 
 .main-portfolio-footer .footer-bottom-nav,
@@ -528,16 +817,16 @@ body {
 /*==================== RESPONSIVE STYLES (Mobile Overrides) ====================*/
 
 @media (max-width: 768px) {
-    /* --- Base Overrides --- */
+    /* --- Base Overrides (FIXED HEADER FONT SIZES) --- */
     .logo {
-        font-size: 18px; 
+        font-size: 16px; /* Reduced from 18px */
     }
     .header {
         padding: 15px 20px;
     }
     .nav a {
-        margin-left: 15px;
-        font-size: 14px;
+        margin-left: 10px; /* Reduced space between links */
+        font-size: 12px; /* Reduced font size for navigation links */
     }
     
     /* Mouse/Wheel Sizing (Fixed size from screenshot) */
@@ -554,7 +843,7 @@ body {
     
     /* Hello I'm Bisal Section Font Size Scaling */
     .hero h1 {
-        font-size: 8vw; /* Bigger heading on mobile */
+        font-size: 8vw; 
         margin-bottom: 5px;
     }
     .hero p {
@@ -570,14 +859,11 @@ body {
 
     @media (orientation: landscape) and (max-height: 768px) {
         .hero-block {
-            /* Force 16:9 ratio in landscape */
             height: 100vh;
             width: auto;
             aspect-ratio: 16 / 9; 
             max-width: 100vw;
             min-height: unset;
-            
-            /* Center the 16:9 box vertically and horizontally */
             position: absolute;
             top: 50%;
             left: 50%;
@@ -586,41 +872,72 @@ body {
     }
 
 
-    /* Reduce Black Space (Vertical Padding/Min-Height) */
-    #about-me-section-1, .about {
-        padding: 40px 5%; /* Increased vertical padding for breathing room */
-        min-height: auto; 
+    /* *** CRITICAL FIX: ELIMINATE MINIMUM HEIGHT ON SECTIONS *** */
+    #about-me-section-1, .about, .projects-title-section, #skills {
+        padding: 20px 5%; 
+        min-height: auto !important; 
+    }
+    
+    /* Skills Section Mobile Adjustments */
+    .skills-main-title {
+        font-size: 8vw;
+    }
+    .skills-main-title span {
+        font-size: 8.5vw;
+    }
+
+    .skills-card-container {
+        /* Revert to stacking columns on mobile */
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .skills-card {
+        padding: 1.5rem;
+    }
+    .skills-card h2 {
+        font-size: 6vw;
+    }
+    .skills-card p.text-lg {
+        font-size: 3.5vw;
+    }
+    .skill-tag {
+        font-size: 2.8vw;
+        padding: 0.4rem 0.8rem;
+        margin: 0.2rem;
+    }
+
+
+    /* Projects Header Mobile Fix */
+    .projects-main-title {
+        font-size: 8vw;
+    }
+    .projects-main-title span {
+        font-size: 8.5vw;
     }
 
 
     /* ---------------------------------------------------- */
-    /* --- SECTION 1: ABOUT ME (Horizontal Layout) --- */
+    /* --- SECTION 1: ABOUT ME (Horizontal Layout - Image Right) --- */
     /* ---------------------------------------------------- */
     #about-me-section-1 .about-container {
-        /* USE HORIZONTAL LAYOUT (row-reverse) to put image on right */
         flex-direction: row-reverse; 
         align-items: flex-start; 
-        gap: 30px; 
+        gap: 20px; 
     }
 
     #about-me-section-1 .home__img {
-        /* Fixed size for the image/blob on mobile, slightly smaller to fit horizontal layout */
         width: 120px; 
         max-width: 120px; 
         height: 120px; 
-        
-        /* Remove stacking specific rules */
         order: unset; 
         margin: 0; 
     }
     
-    /* Crucial: Hide the SVG blob path and make the image circular directly */
     #about-me-section-1 .home__blob {
         width: 100%;
         height: 100%;
     }
     #about-me-section-1 .home__blob-img {
-        /* OVERRIDE the SVG mask effect for a simple circular image */
         border-radius: 50%; 
         object-fit: cover;
         position: relative; 
@@ -629,23 +946,20 @@ body {
         transform: none;
     }
     
-    /* Adjusted text block sizing to work with horizontal image */
     #about-me-section-1 .about-text {
-        flex-grow: 1;
-        flex-shrink: 1;
         min-width: 55%; 
         max-width: 70%;
         text-align: left;
     }
     
-    /* Font size scaling for Section 1 (Adjusted for horizontal space) */
+    /* Font size scaling for Section 1 (Mobile) */
     #about-me-section-1 .about-text h1 {
         font-size: 5vw; 
         margin-bottom: 5px;
     }
     #about-me-section-1 .about-text h3 {
         font-size: 3vw;
-        margin-bottom: 15px;
+        margin-bottom: 10px; 
     }
     #about-me-section-1 .about-text p {
         font-size: 2.8vw; 
@@ -655,50 +969,43 @@ body {
     
     /* Contact Button and Logos scaling */
     .btn-resume {
-        padding: 12px 20px; 
-        font-size: 3.5vw;
+        padding: 10px 18px; 
+        font-size: 3vw;
         margin-bottom: 15px;
     }
     .social-icons-vertical {
-        gap: 15px; /* Reduced gap */
+        gap: 15px; 
     }
     .social-icons-vertical a {
         font-size: 5vw; 
     }
 
 
-    /* ---------------------------------------------------- */
-    /* --- SECTION 2: GAME & LEVEL DESIGNER (Horizontal Layout) --- */
-    /* ---------------------------------------------------- */
+    /* ----------------------------------------------------------------- */
+    /* --- SECTION 2: GAME & LEVEL DESIGNER (Horizontal Layout - Image Left) --- */
+    /* ----------------------------------------------------------------- */
     .about .about-container {
-        /* *** CRITICAL CHANGE: USE HORIZONTAL LAYOUT (row) to put image on left/right *** */
-        flex-direction: row; /* Keep the image on the left, text on the right */
+        flex-direction: row; 
         align-items: center; 
-        gap: 30px; /* Reduced gap for mobile horizontal space */
+        gap: 20px; 
     }
     
     .about .about-img {
-        /* Fixed size for the image on mobile */
-        width: 150px; 
-        max-width: 150px;
-        height: 200px; /* Adjusted height for the vertical image aspect */
-        
-        /* Remove stacking specific rules */
+        width: 120px; 
+        max-width: 120px;
+        height: 160px; 
         order: unset; 
         margin: 0; 
     }
 
     .about .about-text {
-        /* Adjusted text block sizing to work with horizontal image */
-        flex-grow: 1;
-        flex-shrink: 1;
         min-width: 55%; 
         max-width: 70%;
         text-align: left;
         order: unset; 
     }
 
-    /* Font size scaling for Section 2 (Adjusted for horizontal space) */
+    /* Font size scaling for Section 2 (Mobile) */
     .about .title {
         font-size: 5vw;
         line-height: 1.1;
@@ -708,7 +1015,7 @@ body {
     }
     .about .subtitle {
         font-size: 3vw;
-        margin: 5px 0 10px;
+        margin: 5px 0 10px; 
     }
     .about .description {
         font-size: 2.8vw;
@@ -718,20 +1025,73 @@ body {
         margin: 0 1vw 1vw 0;
     }
     .res-button {
-        padding: 10px 18px;
+        padding: 10px 18px; 
         font-size: 3vw; 
     }
+
+    /* ---------------------------------------------------- */
+    /* --- PROJECTS SECTION (MOBILE OVERRIDES) --- */
+    /* ---------------------------------------------------- */
+    .project-block {
+        /* Force vertical stacking on mobile */
+        flex-direction: column !important;
+        padding: 20px 0; /* Adjusted vertical padding */
+        min-height: auto;
+    }
     
-    /* Footer Fixes (Unchanged) */
+    /* Mobile styles for the new project card container */
+    .project-right-media, .project-left-media {
+        flex-direction: column-reverse !important; /* Stack content above media */
+        width: 90%;
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    /* Reverse content order on the black block so media is still top */
+    .project-block:nth-child(2) .project-left-media {
+        flex-direction: column !important; /* Keep media on top for the second block */
+    }
+    
+    .project-media, .project-content {
+        max-width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .project-media {
+        max-width: 80%; /* Shrink media width slightly on mobile */
+    }
+
+    .project-title {
+        font-size: 8vw;
+    }
+
+    .project-description {
+        font-size: 3.5vw;
+        margin-bottom: 1.5rem;
+    }
+
+    .project-buttons {
+        align-items: center;
+        width: 100%;
+    }
+    
+    .btn-more-info, .btn-steam {
+        width: 80%; /* Takes up most of the mobile screen width */
+    }
+
+
+    /* Footer Fixes */
     .main-portfolio-footer .footer-top {
-        flex-direction: column;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center; 
         padding: 30px 15px 20px;
+        flex-direction: column;
     }
     .main-portfolio-footer .footer-column {
         width: 100%;
         min-width: unset;
         padding: 10px 0;
+        text-align: center; 
     }
     .main-portfolio-footer .footer-bottom-nav {
         flex-direction: column;

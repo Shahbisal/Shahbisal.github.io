@@ -17,8 +17,8 @@ window.addEventListener('scroll', scrollUp)
 
 
 //==================== SCROLL SECTIONS ACTIVE LINK ====================
-// Note: This relies on sections having IDs matching the href of the nav links (e.g., #about-me-section-1, #contact)
-const sections = document.querySelectorAll('section[id]')
+// Note: This now includes #projects-header for section highlighting
+const sections = document.querySelectorAll('section[id]') 
 
 function scrollActive(){
     const scrollY = window.pageYOffset
@@ -31,7 +31,6 @@ function scrollActive(){
         // Check if current scroll position is within the section bounds
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
             // Add active link class to the corresponding nav item
-            // Note: This assumes nav links are structured like: <a href="#sectionId">
             const navLink = document.querySelector(`.nav a[href*="#${sectionId}"]`);
             if (navLink) {
                  navLink.classList.add('active-link');
@@ -55,3 +54,27 @@ function scrollHeader(){
     if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
+
+
+//==================== ADDED: ANIMATE ELEMENTS ON SCROLL ====================
+function animateOnScroll() {
+    // Get all elements that need to animate (your skill cards)
+    const animatedElements = document.querySelectorAll('.animate-card-init');
+    const screenHeight = window.innerHeight;
+
+    animatedElements.forEach(element => {
+        // Get the position of the element relative to the viewport
+        const elementTop = element.getBoundingClientRect().top;
+
+        // Animate the element when it is 80% (0.8) of the screen height into view
+        if (elementTop < screenHeight * 0.8) {
+            element.classList.add('show-animate');
+            // Remove the initial class to ensure it doesn't try to re-animate
+            element.classList.remove('animate-card-init');
+        }
+    });
+}
+
+// Initial check and subsequent checks on scroll
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll); // Run once on page load to check initial position
