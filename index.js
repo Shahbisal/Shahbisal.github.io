@@ -17,7 +17,7 @@ window.addEventListener('scroll', scrollUp)
 
 
 //==================== SCROLL SECTIONS ACTIVE LINK ====================
-// Note: This now includes #projects-header for section highlighting
+// UPDATED: This function is simplified to only include the remaining sections (home, about, skills, projects)
 const sections = document.querySelectorAll('section[id]') 
 
 function scrollActive(){
@@ -27,17 +27,20 @@ function scrollActive(){
         const sectionHeight = current.offsetHeight
         const sectionTop = current.offsetTop - 50; // Offset by header height
         const sectionId = current.getAttribute('id')
+        
+        // This makes sure the nav links work for the updated sections:
+        const linkSelector = `.nav a[href*="#${sectionId}"]`;
 
         // Check if current scroll position is within the section bounds
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
             // Add active link class to the corresponding nav item
-            const navLink = document.querySelector(`.nav a[href*="#${sectionId}"]`);
+            const navLink = document.querySelector(linkSelector);
             if (navLink) {
                  navLink.classList.add('active-link');
             }
         } else {
              // Remove active link class
-             const navLink = document.querySelector(`.nav a[href*="#${sectionId}"]`);
+             const navLink = document.querySelector(linkSelector);
              if (navLink) {
                  navLink.classList.remove('active-link');
              }
@@ -54,27 +57,3 @@ function scrollHeader(){
     if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
-
-
-//==================== ADDED: ANIMATE ELEMENTS ON SCROLL ====================
-function animateOnScroll() {
-    // Get all elements that need to animate (your skill cards)
-    const animatedElements = document.querySelectorAll('.animate-card-init');
-    const screenHeight = window.innerHeight;
-
-    animatedElements.forEach(element => {
-        // Get the position of the element relative to the viewport
-        const elementTop = element.getBoundingClientRect().top;
-
-        // Animate the element when it is 80% (0.8) of the screen height into view
-        if (elementTop < screenHeight * 0.8) {
-            element.classList.add('show-animate');
-            // Remove the initial class to ensure it doesn't try to re-animate
-            element.classList.remove('animate-card-init');
-        }
-    });
-}
-
-// Initial check and subsequent checks on scroll
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll); // Run once on page load to check initial position
