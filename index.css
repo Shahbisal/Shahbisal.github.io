@@ -233,23 +233,46 @@ body {
 .btn-resume {
     display: inline-block;
     margin-bottom: 20px;
-    background-color: white;
-    color: black;
+    background-color: rgb(251, 249, 249);
+    color: rgb(0, 0, 0);
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
     font-weight: bold;
     text-decoration: none;
-    border: 2px solid white;
+    border: 2px solid rgb(255, 255, 255);
     transition: 0.3s;
     white-space: nowrap;
     font-size: 1rem; 
+}
+
+.btn-contact {
+    display: inline-block;
+    margin-bottom: 20px;
+    background-color: rgb(64, 61, 61);
+    color: rgb(239, 235, 235);
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid rgb(255, 255, 255);
+    transition: 0.3s;
+    white-space: nowrap;
+    font-size: 1rem; 
+}
+
+/* ADDED: Smaller size for the Send Message button in the footer */
+.footer-top .btn-resume {
+    padding: 0.6rem 1.2rem; /* Reduced padding for a smaller button */
+    font-size: 0.9rem;
+    /* Added to override margin from general .btn-resume for consistency in the footer context */
+    margin-bottom: 0; 
 }
 
 .btn-resume:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
     background-color: transparent;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .social-icons-vertical {
@@ -396,7 +419,7 @@ body {
 
 .res-button:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 15px rgba(156, 40, 40, 0.1);
     background-color: transparent;
     color: white;
 }
@@ -745,9 +768,10 @@ body {
 }
 
 .main-portfolio-footer .footer-top {
+    /* Set up for two columns on desktop */
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: space-around; 
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px 40px;
@@ -755,11 +779,46 @@ body {
 }
 
 .main-portfolio-footer .footer-column {
-    width: 100%; 
-    max-width: 600px; 
-    min-width: 200px;
+    /* Desktop Styles (Default) */
+    width: 45%; 
+    max-width: 500px; 
+    min-width: 250px; 
     padding: 20px;
+    margin-left: 0; 
+    margin-right: 0;
 }
+
+/* DESKTOP ALIGNMENT FIXES */
+
+/* Message column (LEFT) is on the left, align its content left */
+.main-portfolio-footer .message-col {
+    text-align: left;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; /* Aligns content to the left of its box */
+}
+.main-portfolio-footer .message-col h4,
+.main-portfolio-footer .message-col p {
+    text-align: left;
+}
+
+/* Contact column (RIGHT) is on the right, align its content left */
+.main-portfolio-footer .contact-col {
+    text-align: left;
+}
+.main-portfolio-footer .contact-col p,
+.main-portfolio-footer .contact-col h4 {
+    text-align: left;
+}
+
+/* Button Size Adjustment (RETAINS THE NEW SMALLER SIZE) */
+.footer-top .btn-resume {
+    padding: 0.6rem 1.2rem; /* Smaller button padding */
+    font-size: 0.7rem;
+    margin-bottom: 0;
+    border-radius: 5.5px; 
+}
+
 
 .main-portfolio-footer h4 {
     font-size: 18px;
@@ -1082,25 +1141,47 @@ body {
 
     /* Footer Fixes */
     .main-portfolio-footer .footer-top {
+        /* Force single column for mobile, with the two column elements stacking vertically */
+        flex-direction: column;
         justify-content: center;
         align-items: center; 
         padding: 30px 15px 20px;
-        flex-direction: column;
     }
     .main-portfolio-footer .footer-column {
+        /* Mobile Styles */
         width: 100%;
         min-width: unset;
         padding: 10px 0;
-        text-align: center; 
     }
+    
+    /* Align the Contact Details/Get in Touch content to the center on mobile */
+    .main-portfolio-footer .footer-column p,
+    .main-portfolio-footer .footer-column h4 {
+        text-align: center;
+    }
+    
+    /* Center the button and its container on mobile */
+    .main-portfolio-footer .message-col {
+        align-items: center;
+    }
+    .footer-top .btn-resume {
+        margin: 15px auto 0 auto; /* Center button horizontally on mobile */
+    }
+    
+    /* Reverted to vertical stacking on mobile view */
     .main-portfolio-footer .footer-bottom-nav {
-        flex-direction: column;
+        /* flex-direction: column;  */
+        flex-wrap: nowrap;
+        justify-content: center;
         gap: 10px;
         padding: 15px 10px;
     }
+    
+    /* Keeping icons horizontal on mobile view */
     .main-portfolio-footer .footer-bottom-social {
         flex-direction: row; 
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        justify-content: center;
         gap: 15px; 
         padding: 15px 10px;
     }
