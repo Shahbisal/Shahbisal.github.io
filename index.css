@@ -608,7 +608,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px; /* Inner padding for content ----------------------------------------------------*/
+    padding: 20px; /* Inner padding for content ----------------------------------------------------*/
     
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
@@ -624,6 +624,12 @@ body {
 .project-block:nth-child(2) .project-left-media {
     background-color: black;
     color: white;
+
+}
+.project-block:nth-child(3) .project-right-media {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 2px solid black;
 
 }
 
@@ -642,6 +648,10 @@ body {
     padding: 0 20px;
     text-align: left;
 }
+
+
+
+
 
 .project-media img, .project-media iframe {
     width: 100%;
@@ -715,6 +725,17 @@ body {
     background-color: #ccc;
 }
 
+
+/* Buttons inside the BLACK card (Project 2) */
+.project-block:nth-child(3) .btn-more-info, 
+.project-block:nth-child(3) .btn-steam {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+}
+.project-block:nth-child(2) .btn-steam:hover {
+    background-color: #ccc;
+}
 
 .project-right-media .btn-more-info:hover, .project-right-media .btn-steam:hover,
 .project-left-media .btn-more-info:hover, .project-left-media .btn-steam:hover {
