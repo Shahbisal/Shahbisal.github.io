@@ -134,7 +134,10 @@ const projectData = {
         description: "A collection of hero sketches, NPC concepts, and costume designs created in Photoshop and Procreate.",
         gameLink: "", // Empty = No 'Play' button will appear
         images: [
-            'pending design.png',
+            // 'pending design.png'------------------------,
+            'CD1.png',
+            'CD2.png',
+            'CD3.png',
             
         ]
     },
