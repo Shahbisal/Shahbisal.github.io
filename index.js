@@ -73,7 +73,7 @@ const projectData = {
             't1.png', // Your Image
             'p1.png', // Your Image
             'p2.png', // Your Image
-            'GamePlay.mp4',         // <--- YOUR VIDEO (Make sure file exists!)
+            'project1vedio.mp4',         // <--- YOUR VIDEO (Make sure file exists!)
             'p3.png' ,                // Another Image
             'p4.png' ,                // Another Image
             'p5.png' ,                // Another Image
@@ -165,9 +165,9 @@ const projectData = {
 
 
 const socialLinks = {
-    linkedin: "https://www.linkedin.com/in/yourprofile",
-    instagram: "https://www.instagram.com/yourprofile",
-    twitter: "https://twitter.com/yourprofile"
+    linkedin: "https://www.linkedin.com/in/shahbisal-gamedesigner/",
+    instagram: "https://www.instagram.com",
+    twitter: "https://twitter.com"
 };
 
 /* =========================================
