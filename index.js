@@ -124,7 +124,7 @@ const projectData = {
         description: "An graphic novel adventure game about growing up in monster society.",
         gameLink: "", 
         images: [
-            'ppp3.png',
+            'pppp3.png',
         ]
     },
     // --- PASTE THIS AFTER 'project3' (Don't forget the comma before it!) ---
