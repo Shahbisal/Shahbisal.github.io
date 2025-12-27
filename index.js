@@ -124,7 +124,7 @@ const projectData = {
         description: "An graphic novel adventure game about growing up in monster society.",
         gameLink: "", 
         images: [
-            'pppp3.mp4',
+            'project3vedio.mp4',
             'ppp3.png',
         ]
     },
