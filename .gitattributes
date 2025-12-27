@@ -35,4 +35,3 @@
 *.umeta binary
 *.shader text
 *.shadergraph text
-*.mp4 filter=lfs diff=lfs merge=lfs -text
