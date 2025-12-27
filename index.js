@@ -73,7 +73,7 @@ const projectData = {
             't1.png', // Your Image
             'p1.png', // Your Image
             'p2.png', // Your Image
-            'GamePlay.mp4',         // <--- YOUR VIDEO (Make sure file exists!)
+            'project1vedio.mp4',         // <--- YOUR VIDEO (Make sure file exists!)
             'p3.png' ,                // Another Image
             'p4.png' ,                // Another Image
             'p5.png' ,                // Another Image
